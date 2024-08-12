@@ -49,11 +49,11 @@
             outcome = "win";
             evenOdd = "odd";
           }
-          else if(combinedNums % 2 === 1 && gChoice === "even") {
-            alert("You were incorrect it is odd! You lose!");
+          else if(combinedNums % 2 === 0 && gChoice === "odd") {
+            alert("You were incorrect it is even! You lose!");
             losses++;
             outcome = "lose";
-            evenOdd = "odd";
+            evenOdd = "even";
           }
           else if(gChoice !== "even" && gChoice !== "odd") {
             alert("Invalid Entry, please enter even or odd to continue game");
