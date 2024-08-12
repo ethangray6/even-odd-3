@@ -18,52 +18,49 @@
     let losses = 0;
     let combinedNums;
     let gChoice;
-    let outcome;
-    let evenOdd;
+    let outcome = "";
+    let evenOdd = "";
     let userName = prompt("Welcome to the Even or Odd Game, Please enter your name to get started: ");
     alert("Welcome " + userName + " Lets get Started.");
+    
     while (cont !== "n") {
         if(cont === "y") {
           randomNumberFirst = Math.floor(Math.random() * 4) + 1;
           randomNumberSecond = Math.floor(Math.random() * 4) + 1;
           combinedNums = randomNumberFirst + randomNumberSecond;
-          gChoice = prompt('Which do you think it is going be, Even or Odd?').toLowerCase();
-          alert("1");
-          alert("2");
-          alert("3");
+          gChoice = prompt('Which do you think it is going to be, Even or Odd?').toLowerCase();
+          
           if(combinedNums % 2 === 0 && gChoice === "even") {
             alert("You were correct it is even! You win!");
             Wins++;
             outcome = "win";
             evenOdd = "even";
-          }
-          else if(combinedNums % 2 === 1 && gChoice === "even") {
-            alert("You were incorrect it is odd! You lose!");
-            losses++;
-            outcome = "lose";
-            evenOdd = "odd";
-          }
-          else if(combinedNums % 2 === 1 && gChoice === "odd") {
-            alert("You were correct it is odd! You win!");
-            Wins++;
-            outcome = "win";
-            evenOdd = "odd";
-          }
-          else if(combinedNums % 2 === 0 && gChoice === "odd") {
+          } else if(combinedNums % 2 === 0 && gChoice === "odd") {
             alert("You were incorrect it is even! You lose!");
             losses++;
             outcome = "lose";
             evenOdd = "even";
+          } else if(combinedNums % 2 !== 0 && gChoice === "odd") {
+            alert("You were correct it is odd! You win!");
+            Wins++;
+            outcome = "win";
+            evenOdd = "odd";
+          } else if(combinedNums % 2 !== 0 && gChoice === "even") {
+            alert("You were incorrect it is odd! You lose!");
+            losses++;
+            outcome = "lose";
+            evenOdd = "odd";
+          } else {
+            alert("Invalid Entry, please enter even or odd to continue the game");
           }
-          else if(gChoice !== "even" && gChoice !== "odd") {
-            alert("Invalid Entry, please enter even or odd to continue game");
-          }
-          alert(userName + ", you chose " + gChoice + ", the sum was " + combinedNums + " which is an " + evenOdd + " number, you " + outcome + "!");
+
+          // Show results after handling the guess
+          alert(userName + ", you chose " + gChoice + ", the sum was " + combinedNums + ", which is an " + evenOdd + " number. You " + outcome + "!");
+        } else if(cont !== "y" && cont !== "n") {
+          alert("Invalid Entry, please enter 'y' to continue playing or 'n' to end the game session");
         }
-        else if(cont !== "y" && cont !== "n") {
-          alert("Invalid Entry, please enter y to continue playing or n to end the game session");
-        }
-        cont = prompt("You " + outcome + "! Current Scores are Wins : " + Wins + " Losses : " + losses + " Would you like to play again? y/n").toLowerCase();
+        
+        cont = prompt("You " + outcome + "! Current Scores are Wins: " + Wins + ", Losses: " + losses + ". Would you like to play again? y/n").toLowerCase();
     }
   </script>
 </body>
