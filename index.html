@@ -35,28 +35,34 @@
             Wins++;
             outcome = "win";
             evenOdd = "even";
-          } else if(combinedNums % 2 === 0 && gChoice === "odd") {
+          } 
+          else if(combinedNums % 2 === 0 && gChoice === "odd") {
             alert("You were incorrect it is even! You lose!");
             losses++;
             outcome = "lose";
             evenOdd = "even";
-          } else if(combinedNums % 2 !== 0 && gChoice === "odd") {
+          } 
+          else if(combinedNums % 2 !== 0 && gChoice === "odd") {
             alert("You were correct it is odd! You win!");
             Wins++;
             outcome = "win";
             evenOdd = "odd";
-          } else if(combinedNums % 2 !== 0 && gChoice === "even") {
+          } 
+          else if(combinedNums % 2 !== 0 && gChoice === "even") {
             alert("You were incorrect it is odd! You lose!");
             losses++;
             outcome = "lose";
             evenOdd = "odd";
-          } else {
+          } 
+          else {
+            
             alert("Invalid Entry, please enter even or odd to continue the game");
           }
 
-          // Show results after handling the guess
+       
           alert(userName + ", you chose " + gChoice + ", the sum was " + combinedNums + ", which is an " + evenOdd + " number. You " + outcome + "!");
-        } else if(cont !== "y" && cont !== "n") {
+        } 
+        else if(cont !== "y" && cont !== "n") {
           alert("Invalid Entry, please enter 'y' to continue playing or 'n' to end the game session");
         }
         
